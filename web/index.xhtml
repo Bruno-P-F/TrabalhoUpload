@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Trabalho 2 - Upload</title>
+    </h:head>
+    <h:body>
+        <h:form id="form"> 
+            <p:growl id="growl" life="3000" showDetail="true"/> 
+            <p:fileUpload id="upFile" fileUploadListener="#{fileUpload.realizarUpload}" cancelLabel="Cancelar"
+                          invalidFileMessage="Tipo de arquivo invalido" label="Selecionar..."
+                          fileLimitMessage="Apenas e feito upload de um arquivo por vez" sizeLimit="102400"
+                          fileLimit="1" allowTypes="/(\.|\/)(txt)$/" update="growl,upFile,txtArea"/>    
+            <br/>Dados do Arquivo<br/>
+            <p:inputTextarea id="txtArea" rows="20" autoResize="true" cols="172" value="#{fileUpload.texto}"/>
+        </h:form>
+    </h:body>
+</html>
+
